@@ -1,6 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const SkyAndAtmosphere = ({ timeOfDay, festivalMode, romanticElements }) => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Don't render dynamic content until client-side hydration
+  if (!isClient) {
+    return (
+      <div className={`absolute inset-0 transition-all duration-1000 ${
+        timeOfDay === 'golden' 
+          ? 'bg-gradient-to-br from-amber-50 via-rose-100 to-orange-100' 
+          : timeOfDay === 'sunset'
+          ? 'bg-gradient-to-br from-purple-200 via-pink-200 to-orange-300'
+          : 'bg-gradient-to-br from-indigo-300 via-purple-200 to-pink-200'
+      }`}>
+        <div className={`absolute inset-0 transition-opacity duration-1000 ${
+          timeOfDay === 'evening' ? 'opacity-40' : 'opacity-10'
+        } bg-gradient-to-t from-indigo-900 via-transparent to-transparent`}></div>
+      </div>
+    );
+  }
+
+  const particleCount = isMobile ? 20 : 40;
+  const cloudCount = isMobile ? 6 : 12;
+  const spotlightCount = isMobile ? 6 : 12;
+  const searchlightCount = isMobile ? 3 : 6;
+
   return (
     <>
       {/* Dynamic sky background */}
@@ -15,7 +51,7 @@ const SkyAndAtmosphere = ({ timeOfDay, festivalMode, romanticElements }) => {
           timeOfDay === 'evening' ? 'opacity-40' : 'opacity-10'
         } bg-gradient-to-t from-indigo-900 via-transparent to-transparent`}></div>
         
-        {/* Sun/Moon element - Mobile responsive */}
+        {/* Sun/Moon element */}
         <div className={`absolute ${timeOfDay === 'evening' ? 'top-1/4 right-1/4' : 'top-1/3 right-1/3'} 
                          w-8 sm:w-16 h-8 sm:h-16 rounded-full transition-all duration-1000 ${
                          timeOfDay === 'golden' ? 'bg-amber-200 shadow-[0_0_30px_15px_rgba(255,204,0,0.5)] sm:shadow-[0_0_60px_30px_rgba(255,204,0,0.5)]' : 
@@ -23,36 +59,37 @@ const SkyAndAtmosphere = ({ timeOfDay, festivalMode, romanticElements }) => {
                          'bg-gray-200 shadow-[0_0_35px_15px_rgba(200,200,255,0.2)] sm:shadow-[0_0_70px_30px_rgba(200,200,255,0.2)]'}`}></div>
       </div>
 
-      {/* Floating particles - Mobile optimized */}
+      {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(window.innerWidth < 640 ? 20 : 40)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute animate-bounce opacity-30 text-xs sm:text-base"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
-            }}
-          >
-            {['💫', '✨', '💕', '🌟', '💖', '🎭', '🎪', '🎨'][Math.floor(Math.random() * 8)]}
-          </div>
-        ))}
-      </div>
-
-      {/* Spotlights - Mobile responsive */}
-      {festivalMode && (
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(window.innerWidth < 640 ? 6 : 12)].map((_, i) => (
+        {[...Array(particleCount)].map((_, i) => {
+          const particles = ['💫', '✨', '💕', '🌟', '💖', '🎭', '🎪', '🎨'];
+          return (
             <div
               key={i}
-              className="absolute opacity-20 sm:opacity-25"
+              className="absolute animate-bounce opacity-30 text-xs sm:text-base"
               style={{
-                left: `${5 + i * (window.innerWidth < 640 ? 15 : 8)}%`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${i * 0.3}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            >
+              {particles[Math.floor(Math.random() * particles.length)]}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Spotlights */}
+      {festivalMode && (
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(spotlightCount)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute opacity-20 sm:opacity-25 ${isMobile ? 'w-0.5' : 'w-1'} h-full spotlight-beam`}
+              style={{
+                left: `${5 + i * (isMobile ? 15 : 8)}%`,
                 bottom: '0',
-                width: window.innerWidth < 640 ? '2px' : '3px',
-                height: '100%',
                 background: `linear-gradient(to top, rgba(255, ${100 + i * 20}, ${200 - i * 15}, 0.8), transparent 70%)`,
                 transform: `rotate(${-15 + i * 3}deg)`,
                 transformOrigin: 'bottom center',
@@ -63,14 +100,14 @@ const SkyAndAtmosphere = ({ timeOfDay, festivalMode, romanticElements }) => {
         </div>
       )}
 
-      {/* Clouds - Mobile responsive */}
+      {/* Clouds */}
       <div className="absolute inset-0 pointer-events-none opacity-25 sm:opacity-30">
-        {[...Array(window.innerWidth < 640 ? 6 : 12)].map((_, i) => (
+        {[...Array(cloudCount)].map((_, i) => (
           <div
             key={i}
             className="absolute text-2xl sm:text-4xl animate-gentleFloat"
             style={{
-              left: `${5 + i * (window.innerWidth < 640 ? 15 : 8)}%`,
+              left: `${5 + i * (isMobile ? 15 : 8)}%`,
               top: `${10 + Math.random() * 30}%`,
               animationDelay: `${i * 1.2}s`,
               animationDuration: `${15 + Math.random() * 10}s`
@@ -81,18 +118,16 @@ const SkyAndAtmosphere = ({ timeOfDay, festivalMode, romanticElements }) => {
         ))}
       </div>
 
-      {/* Festival searchlights - Mobile responsive */}
+      {/* Festival searchlights */}
       {festivalMode && (
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {[...Array(window.innerWidth < 640 ? 3 : 6)].map((_, i) => (
+          {[...Array(searchlightCount)].map((_, i) => (
             <div
               key={i}
-              className="absolute opacity-15 sm:opacity-20 animate-pulse"
+              className={`absolute opacity-15 sm:opacity-20 animate-pulse ${isMobile ? 'w-1.5' : 'w-2.5'} h-full`}
               style={{
-                left: `${10 + i * (window.innerWidth < 640 ? 25 : 15)}%`,
+                left: `${10 + i * (isMobile ? 25 : 15)}%`,
                 bottom: '0',
-                width: window.innerWidth < 640 ? '6px' : '10px',
-                height: '100%',
                 background: `linear-gradient(to top, rgba(255, ${150 + i * 20}, ${100 - i * 10}, 0.7), transparent 60%)`,
                 transform: `rotate(${-8 + i * 3}deg)`,
                 transformOrigin: 'bottom center',
@@ -104,37 +139,46 @@ const SkyAndAtmosphere = ({ timeOfDay, festivalMode, romanticElements }) => {
         </div>
       )}
 
-      {/* Romantic overlay - Mobile responsive */}
+      {/* Romantic overlay */}
       <div className="absolute inset-0 opacity-6 sm:opacity-8 pointer-events-none">
         <div 
-          className="w-full h-full"
-          style={{
-            backgroundImage: `radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.4) ${window.innerWidth < 640 ? '2px' : '3px'}, transparent ${window.innerWidth < 640 ? '2px' : '3px'}),
-                              radial-gradient(circle at 80% 80%, rgba(255, 240, 245, 0.4) ${window.innerWidth < 640 ? '2px' : '3px'}, transparent ${window.innerWidth < 640 ? '2px' : '3px'}),
-                              radial-gradient(circle at 40% 60%, rgba(255, 228, 225, 0.4) ${window.innerWidth < 640 ? '1.5px' : '2px'}, transparent ${window.innerWidth < 640 ? '1.5px' : '2px'}),
-                              radial-gradient(circle at 60% 40%, rgba(240, 230, 255, 0.3) ${window.innerWidth < 640 ? '1.5px' : '2px'}, transparent ${window.innerWidth < 640 ? '1.5px' : '2px'})`,
-            backgroundSize: window.innerWidth < 640 
-              ? '40px 40px, 50px 50px, 30px 30px, 35px 35px'
-              : '80px 80px, 100px 100px, 60px 60px, 70px 70px'
-          }}
+          className={`w-full h-full ${isMobile ? 'romantic-overlay-mobile' : 'romantic-overlay-desktop'}`}
         />
       </div>
 
-      {/* Custom CSS for animations - Mobile responsive */}
+      {/* Custom CSS for animations */}
       <style jsx>{`
         @keyframes sway {
-          0% { transform: rotate(var(--rotation-start, -15deg)) translateX(0px); }
-          50% { transform: rotate(var(--rotation-mid, 0deg)) translateX(${window.innerWidth < 640 ? '5px' : '10px'}); }
-          100% { transform: rotate(var(--rotation-end, 15deg)) translateX(0px); }
+          0% { transform: rotate(-15deg) translateX(0px); }
+          50% { transform: rotate(0deg) translateX(${isMobile ? '5px' : '10px'}); }
+          100% { transform: rotate(15deg) translateX(0px); }
         }
         
         @keyframes gentleFloat {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(${window.innerWidth < 640 ? '-4px' : '-8px'}); }
+          50% { transform: translateY(${isMobile ? '-4px' : '-8px'}); }
         }
         
         .animate-gentleFloat {
-          animation: gentleFloat ${window.innerWidth < 640 ? '3s' : '4s'} ease-in-out infinite;
+          animation: gentleFloat ${isMobile ? '3s' : '4s'} ease-in-out infinite;
+        }
+
+        .romantic-overlay-mobile {
+          background-image: 
+            radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.4) 2px, transparent 2px),
+            radial-gradient(circle at 80% 80%, rgba(255, 240, 245, 0.4) 2px, transparent 2px),
+            radial-gradient(circle at 40% 60%, rgba(255, 228, 225, 0.4) 1.5px, transparent 1.5px),
+            radial-gradient(circle at 60% 40%, rgba(240, 230, 255, 0.3) 1.5px, transparent 1.5px);
+          background-size: 40px 40px, 50px 50px, 30px 30px, 35px 35px;
+        }
+
+        .romantic-overlay-desktop {
+          background-image: 
+            radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.4) 3px, transparent 3px),
+            radial-gradient(circle at 80% 80%, rgba(255, 240, 245, 0.4) 3px, transparent 3px),
+            radial-gradient(circle at 40% 60%, rgba(255, 228, 225, 0.4) 2px, transparent 2px),
+            radial-gradient(circle at 60% 40%, rgba(240, 230, 255, 0.3) 2px, transparent 2px);
+          background-size: 80px 80px, 100px 100px, 60px 60px, 70px 70px;
         }
         
         /* Mobile-specific optimizations */

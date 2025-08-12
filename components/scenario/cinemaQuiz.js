@@ -14,149 +14,149 @@ const InteractiveCinemaQuiz = ({ onQuizClose }) => {
 
   const quizData = [
     {
-      "dia": "Segunda",
-      "emoji": "☕",
-      "tema": "Energia Matinal",
-      "cor": "from-orange-500 to-red-500",
-      "perguntas": [
-        {
-          "texto": "Como você prefere começar a semana?",
-          "opcoes": [
-            { texto: "Café forte + playlist motivacional", pontos: 5, emoji: "☕" },
-            { texto: "Meditação + chá calmante", pontos: 3, emoji: "🧘" },
-            { texto: "Exercício + smoothie energético", pontos: 4, emoji: "💪" },
-            { texto: "Mimo na cama + série favorita", pontos: 2, emoji: "🛏️" }
-          ]
-        },
-        {
-          "texto": "Qual frase te motiva mais?",
-          "opcoes": [
-            { texto: "'Seja protagonista da sua história'", pontos: 5, emoji: "🌟" },
-            { texto: "'Um dia de cada vez'", pontos: 3, emoji: "🌅" },
-            { texto: "'Desafios fazem você crescer'", pontos: 4, emoji: "🚀" },
-            { texto: "'Aproveite cada momento'", pontos: 2, emoji: "✨" }
-          ]
-        },
-        {
-          "texto": "Seu mood de segunda ideal:",
-          "opcoes": [
-            { texto: "Determinada e focada", pontos: 5, emoji: "🎯" },
-            { texto: "Calma e reflexiva", pontos: 3, emoji: "🌸" },
-            { texto: "Animada e sociável", pontos: 4, emoji: "🎉" },
-            { texto: "Criativa e inspirada", pontos: 2, emoji: "🎨" }
-          ]
-        }
-      ]
-    },
-    {
-      "dia": "Terça",
-      "emoji": "🎨",
-      "tema": "Criatividade",
-      "cor": "from-purple-500 to-pink-500",
-      "perguntas": [
-        {
-          "texto": "Projeto criativo dos sonhos:",
-          "opcoes": [
-            { texto: "Renovar completamente um espaço", pontos: 5, emoji: "🏠" },
-            { texto: "Criar uma coleção de arte", pontos: 4, emoji: "🖼️" },
-            { texto: "Escrever um livro/blog", pontos: 3, emoji: "📚" },
-            { texto: "Produzir um curta-metragem", pontos: 2, emoji: "🎬" }
-          ]
-        },
-        {
-          "texto": "Inspiração vem de:",
-          "opcoes": [
-            { texto: "Viagens e culturas diferentes", pontos: 4, emoji: "✈️" },
-            { texto: "Natureza e paisagens", pontos: 3, emoji: "🌺" },
-            { texto: "Arte e música", pontos: 5, emoji: "🎭" },
-            { texto: "Pessoas e histórias", pontos: 2, emoji: "👥" }
-          ]
-        },
-        {
-          "texto": "Seu espaço criativo ideal:",
-          "opcoes": [
-            { texto: "Ateliê cheio de luz natural", pontos: 5, emoji: "☀️" },
-            { texto: "Café aconchegante com música", pontos: 3, emoji: "☕" },
-            { texto: "Biblioteca silenciosa", pontos: 2, emoji: "📖" },
-            { texto: "Estúdio moderno com tecnologia", pontos: 4, emoji: "💻" }
-          ]
-        }
-      ]
-    },
-    {
-      "dia": "Quarta",
-      "emoji": "⚡",
-      "tema": "Energia Extra",
-      "cor": "from-yellow-500 to-orange-500",
-      "perguntas": [
-        {
-          "texto": "Metade da semana pede:",
-          "opcoes": [
-            { texto: "Uma surpresa romântica", pontos: 5, emoji: "💕" },
-            { texto: "Encontro com amigos", pontos: 4, emoji: "👯" },
-            { texto: "Hobby novo para aprender", pontos: 3, emoji: "🎯" },
-            { texto: "Maratona da série favorita", pontos: 2, emoji: "📺" }
-          ]
-        },
-        {
-          "texto": "Seu tipo de diversão:",
-          "opcoes": [
-            { texto: "Aventura espontânea", pontos: 5, emoji: "🗺️" },
-            { texto: "Noite de jogos", pontos: 3, emoji: "🎲" },
-            { texto: "Show ou evento cultural", pontos: 4, emoji: "🎵" },
-            { texto: "Jantar especial em casa", pontos: 2, emoji: "🕯️" }
-          ]
-        }
-      ]
-    },
-    {
-      "dia": "Quinta",
-      "emoji": "🎵",
-      "tema": "Nostalgia Musical",
-      "cor": "from-blue-500 to-purple-500",
-      "perguntas": [
-        {
-          "texto": "Playlist perfeita para hoje:",
-          "opcoes": [
-            { texto: "Clássicos dos anos 80-90", pontos: 4, emoji: "🎶" },
-            { texto: "Sucessos atuais", pontos: 3, emoji: "📻" },
-            { texto: "Jazz e bossa nova", pontos: 2, emoji: "🎷" },
-            { texto: "Mix romântico atemporal", pontos: 5, emoji: "💖" }
-          ]
-        },
-        {
-          "texto": "Memória musical favorita:",
-          "opcoes": [
-            { texto: "Primeira dança", pontos: 5, emoji: "💃" },
-            { texto: "Show inesquecível", pontos: 4, emoji: "🎤" },
-            { texto: "Música do primeiro amor", pontos: 3, emoji: "💘" },
-            { texto: "Cantando no carro", pontos: 2, emoji: "🚗" }
-          ]
-        }
-      ]
-    },
-    {
-      "dia": "Sexta",
+      "dia": "Romance",
       "emoji": "💕",
-      "tema": "Romance",
-      "cor": "from-pink-500 to-red-500",
+      "tema": "Que tipo de amor te toca?",
+      "cor": "from-rose-400 via-pink-500 to-red-500",
       "perguntas": [
         {
-          "texto": "Encontro perfeito seria:",
+          "texto": "Qual história de amor mais te emociona?",
           "opcoes": [
-            { texto: "Jantar com vista panorâmica", pontos: 5, emoji: "🌃" },
-            { texto: "Piquenique ao pôr do sol", pontos: 4, emoji: "🌅" },
-            { texto: "Cinema seguido de conversa", pontos: 3, emoji: "🍿" },
-            { texto: "Cozinhar juntos em casa", pontos: 2, emoji: "👨‍🍳" }
+            { texto: "Amor que supera obstáculos impossíveis", pontos: 5, emoji: "🌟" },
+            { texto: "Romance doce e cotidiano", pontos: 3, emoji: "☕" },
+            { texto: "Paixão intensa e avassaladora", pontos: 4, emoji: "🔥" },
+            { texto: "Amizade que vira amor verdadeiro", pontos: 2, emoji: "💝" }
           ]
         },
         {
-          "texto": "Gesto romântico que te emociona:",
+          "texto": "Momento romântico perfeito seria:",
           "opcoes": [
-            { texto: "Surpresa planejada com carinho", pontos: 5, emoji: "🎁" },
-            { texto: "Bilhete doce inesperado", pontos: 4, emoji: "💌" },
-            { texto: "Música dedicada", pontos: 3, emoji: "🎼" },
-            { texto: "Abraço apertado após um dia difícil", pontos: 2, emoji: "🤗" }
+            { texto: "Dançar sob as estrelas", pontos: 5, emoji: "✨" },
+            { texto: "Cozinhar juntos rindo muito", pontos: 3, emoji: "👨‍🍳" },
+            { texto: "Viajar para um lugar mágico", pontos: 4, emoji: "🌍" },
+            { texto: "Assistir filmes abraçadinhos", pontos: 2, emoji: "🍿" }
+          ]
+        },
+        {
+          "texto": "O que mais valoriza no amor?",
+          "opcoes": [
+            { texto: "Cumplicidade e conexão profunda", pontos: 5, emoji: "💫" },
+            { texto: "Carinho e cuidado mútuo", pontos: 3, emoji: "🤗" },
+            { texto: "Aventura e descobertas juntos", pontos: 4, emoji: "🗺️" },
+            { texto: "Paz e segurança emocional", pontos: 2, emoji: "🏠" }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Aventura",
+      "emoji": "🌟",
+      "tema": "Qual sua vibe aventureira?",
+      "cor": "from-amber-400 via-orange-500 to-red-500",
+      "perguntas": [
+        {
+          "texto": "Aventura dos sonhos seria:",
+          "opcoes": [
+            { texto: "Explorar uma cidade antiga e misteriosa", pontos: 5, emoji: "🏛️" },
+            { texto: "Roadtrip sem destino definido", pontos: 4, emoji: "🚗" },
+            { texto: "Acampar sob um céu estrelado", pontos: 3, emoji: "⭐" },
+            { texto: "Descobrir um café escondido na cidade", pontos: 2, emoji: "☕" }
+          ]
+        },
+        {
+          "texto": "Quando assiste um filme de aventura, você:",
+          "opcoes": [
+            { texto: "Se imagina vivendo aquela jornada", pontos: 4, emoji: "🎬" },
+            { texto: "Fica na torcida pelos personagens", pontos: 3, emoji: "📺" },
+            { texto: "Analisa cada detalhe da história", pontos: 5, emoji: "🔍" },
+            { texto: "Só quer relaxar e se divertir", pontos: 2, emoji: "😊" }
+          ]
+        },
+        {
+          "texto": "Seu tipo de herói/heroína favorito:",
+          "opcoes": [
+            { texto: "Corajoso(a) que luta pelo que é certo", pontos: 5, emoji: "⚔️" },
+            { texto: "Inteligente que resolve tudo com sabedoria", pontos: 4, emoji: "🧠" },
+            { texto: "Divertido(a) que usa humor nas dificuldades", pontos: 3, emoji: "😄" },
+            { texto: "Sensível que toca o coração dos outros", pontos: 2, emoji: "💖" }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Fantasia",
+      "emoji": "🦋",
+      "tema": "Que mundo mágico te chama?",
+      "cor": "from-purple-400 via-violet-500 to-indigo-600",
+      "perguntas": [
+        {
+          "texto": "Se pudesse viver em um mundo fantástico:",
+          "opcoes": [
+            { texto: "Reino encantado com castelos e magia", pontos: 5, emoji: "🏰" },
+            { texto: "Floresta mágica com criaturas místicas", pontos: 4, emoji: "🧚" },
+            { texto: "Cidade futurista com tecnologia incrível", pontos: 3, emoji: "🌆" },
+            { texto: "Vila aconchegante com pessoas especiais", pontos: 2, emoji: "🏘️" }
+          ]
+        },
+        {
+          "texto": "Poder mágico que mais te fascina:",
+          "opcoes": [
+            { texto: "Voar pelos céus infinitos", pontos: 5, emoji: "🕊️" },
+            { texto: "Curar dores e trazer felicidade", pontos: 2, emoji: "💚" },
+            { texto: "Viajar no tempo para qualquer época", pontos: 4, emoji: "⏰" },
+            { texto: "Ler mentes e entender corações", pontos: 3, emoji: "💭" }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Drama",
+      "emoji": "🎭",
+      "tema": "Que emoções te movem?",
+      "cor": "from-blue-400 via-blue-500 to-blue-600",
+      "perguntas": [
+        {
+          "texto": "História que mais te emociona:",
+          "opcoes": [
+            { texto: "Superação pessoal contra todas as odds", pontos: 5, emoji: "💪" },
+            { texto: "Sacrifício por amor à família", pontos: 4, emoji: "👨‍👩‍👧‍👦" },
+            { texto: "Encontrar propósito após uma perda", pontos: 3, emoji: "🌅" },
+            { texto: "Amizade que transforma vidas", pontos: 2, emoji: "🤝" }
+          ]
+        },
+        {
+          "texto": "Quando um filme te faz chorar, você:",
+          "opcoes": [
+            { texto: "Deixa as lágrimas fluírem naturalmente", pontos: 3, emoji: "😢" },
+            { texto: "Tenta disfarçar mas fica emocionada", pontos: 4, emoji: "🥺" },
+            { texto: "Chora e ainda quer conversar sobre", pontos: 5, emoji: "💬" },
+            { texto: "Prefere filmes que te fazem sorrir", pontos: 2, emoji: "😊" }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Comédia",
+      "emoji": "😄",
+      "tema": "O que te faz rir?",
+      "cor": "from-yellow-400 via-amber-500 to-orange-500",
+      "perguntas": [
+        {
+          "texto": "Seu tipo de humor favorito:",
+          "opcoes": [
+            { texto: "Comédia inteligente e sarcástica", pontos: 4, emoji: "🤓" },
+            { texto: "Humor romântico e fofo", pontos: 5, emoji: "🥰" },
+            { texto: "Situações absurdas e engraçadas", pontos: 3, emoji: "🤪" },
+            { texto: "Comédia leve e despretensiosa", pontos: 2, emoji: "😌" }
+          ]
+        },
+        {
+          "texto": "Noite perfeita de diversão seria:",
+          "opcoes": [
+            { texto: "Stand-up comedy ao vivo", pontos: 4, emoji: "🎤" },
+            { texto: "Comédia romântica com pipoca", pontos: 5, emoji: "🍿" },
+            { texto: "Série engraçada em maratona", pontos: 2, emoji: "📺" },
+            { texto: "Improvisação e jogos divertidos", pontos: 3, emoji: "🎭" }
           ]
         }
       ]
@@ -165,19 +165,20 @@ const InteractiveCinemaQuiz = ({ onQuizClose }) => {
 
   const createParticles = () => {
     const newParticles = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       newParticles.push({
         id: Math.random(),
         x: Math.random() * 80 + 10,
-        y: Math.random() * 60 + 20,
-        delay: Math.random() * 1
+        y: Math.random() * 70 + 15,
+        delay: Math.random() * 1.5,
+        type: i % 2 === 0 ? '💖' : '✨'
       });
     }
     setParticles(newParticles);
   };
 
   const handleAnswer = (answerIndex, points) => {
-    if (selectedAnswer !== null) return; // Prevent multiple clicks
+    if (selectedAnswer !== null) return;
     
     setSelectedAnswer(answerIndex);
     const newScore = score + points;
@@ -214,7 +215,7 @@ const InteractiveCinemaQuiz = ({ onQuizClose }) => {
       }
       setIsTransitioning(false);
       setSelectedAnswer(null);
-    }, 1000);
+    }, 1200);
   };
 
   const restart = () => {
@@ -230,105 +231,151 @@ const InteractiveCinemaQuiz = ({ onQuizClose }) => {
   };
 
   const getPersonalityResult = () => {
-    if (score >= 60) return {
-      title: "Alma Romântica",
-      description: "Você valoriza momentos especiais e conexões profundas",
-      movie: "Encontro de Amor",
-      emoji: "💖",
-      color: "from-pink-500 to-red-500"
+    if (score >= 65) return {
+      title: "Alma Romântica Épica",
+      description: "Você ama histórias grandiosas de amor e aventura que tocam o coração profundamente",
+      movie: "La La Land",
+      genre: "Musical Romântico",
+      emoji: "💫",
+      color: "from-pink-400 via-rose-500 to-red-500",
+      movies: ["The Notebook", "Casablanca", "Titanic"]
     };
-    if (score >= 45) return {
+    if (score >= 50) return {
       title: "Espírito Aventureiro", 
-      description: "Busca experiências marcantes e novos horizontes",
-      movie: "Viagem dos Sonhos",
+      description: "Busca filmes cheios de magia, aventura e mundos incríveis para explorar",
+      movie: "Mamma Mia!",
+      genre: "Musical Aventura",
       emoji: "🌟",
-      color: "from-yellow-500 to-orange-500"
+      color: "from-amber-400 via-orange-500 to-red-500",
+      movies: ["The Princess Bride", "Moana", "Wonder Woman"]
     };
-    if (score >= 30) return {
-      title: "Coração Criativo",
-      description: "Encontra beleza e inspiração em tudo ao redor",
-      movie: "Arte & Paixão",
-      emoji: "🎨",
-      color: "from-purple-500 to-pink-500"
+    if (score >= 35) return {
+      title: "Coração Sensível",
+      description: "Aprecia filmes que exploram emoções profundas e conexões humanas genuínas",
+      movie: "About Time",
+      genre: "Drama Romântico",
+      emoji: "🦋",
+      color: "from-blue-400 via-purple-500 to-indigo-500",
+      movies: ["Inside Out", "Her", "Eternal Sunshine"]
     };
     return {
-      title: "Essência Tranquila",
-      description: "Aprecia simplicidade e momentos de paz",
-      movie: "Refúgio Sereno",
+      title: "Essência Doce",
+      description: "Adora comédias românticas leves que aquecem o coração e fazem sorrir",
+      movie: "You've Got Mail",
+      genre: "Comédia Romântica",
       emoji: "🌸",
-      color: "from-blue-500 to-green-500"
+      color: "from-yellow-400 via-pink-400 to-rose-400",
+      movies: ["10 Things I Hate About You", "Crazy, Stupid, Love", "The Holiday"]
     };
   };
 
   const currentQuiz = quizData[currentDay];
   const currentQ = currentQuiz.perguntas[currentQuestion];
   const totalQuestions = quizData.reduce((acc, day) => acc + day.perguntas.length, 0);
-  const answeredQuestions = currentDay * 3 + currentQuestion;
+  const answeredQuestions = currentDay === 0 ? currentQuestion : 
+    quizData.slice(0, currentDay).reduce((acc, day) => acc + day.perguntas.length, 0) + currentQuestion;
   const progress = (answeredQuestions / totalQuestions) * 100;
 
   if (showResult) {
     const result = getPersonalityResult();
     return (
-      <div className="h-full w-full flex flex-col justify-center items-center p-2 sm:p-4">
-        {/* Particles */}
+      <div className="h-full w-full flex flex-col justify-center items-center p-3 sm:p-6 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-pink-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-700"></div>
+          <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+        </div>
+
+        {/* Celebration Particles */}
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute animate-pulse text-yellow-300 text-lg sm:text-xl z-10"
+            className="absolute text-xl sm:text-2xl z-20 animate-bounce"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
-              animationDelay: `${particle.delay}s`
+              animationDelay: `${particle.delay}s`,
+              animationDuration: '2s'
             }}
           >
-            ✨
+            {particle.type}
           </div>
         ))}
         
-        <div className="text-center space-y-2 sm:space-y-4">
-          <div className="text-3xl sm:text-5xl mb-2">{result.emoji}</div>
-          <h2 className={`text-xl sm:text-4xl font-bold bg-gradient-to-r ${result.color} bg-clip-text text-transparent animate-pulse drop-shadow-lg`}>
+        <div className="relative z-10 text-center space-y-3 sm:space-y-6 max-w-md mx-auto">
+          
+          {/* Result Emoji */}
+          <div className="text-4xl sm:text-6xl mb-3 animate-bounce">{result.emoji}</div>
+          
+          {/* Title */}
+          <h2 className={`text-xl sm:text-3xl font-bold bg-gradient-to-r ${result.color} bg-clip-text text-transparent animate-pulse drop-shadow-lg leading-tight`}>
             {result.title}
           </h2>
-          <p className="text-sm sm:text-xl text-white font-medium">{result.description}</p>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-4 mb-3 sm:mb-6">
-            <div className="flex justify-around text-center">
-              <div>
+          {/* Description */}
+          <p className="text-sm sm:text-lg text-gray-200 font-medium leading-relaxed px-2">
+            {result.description}
+          </p>
+          
+          {/* Stats Card */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 shadow-2xl">
+            <div className="grid grid-cols-3 gap-4 text-center mb-4">
+              <div className="space-y-1">
                 <div className="text-lg sm:text-2xl font-bold text-yellow-400">{score}</div>
                 <div className="text-xs sm:text-sm text-gray-300">Pontos</div>
               </div>
-              <div>
-                <div className="text-lg sm:text-2xl font-bold text-yellow-400">{streak}</div>
+              <div className="space-y-1">
+                <div className="text-lg sm:text-2xl font-bold text-pink-400">{streak}</div>
                 <div className="text-xs sm:text-sm text-gray-300">Sequência</div>
               </div>
-              <div>
-                <div className="text-lg sm:text-2xl font-bold text-yellow-400">{Math.round((score/75)*100)}%</div>
+              <div className="space-y-1">
+                <div className="text-lg sm:text-2xl font-bold text-purple-400">{Math.round((score/75)*100)}%</div>
                 <div className="text-xs sm:text-sm text-gray-300">Match</div>
               </div>
             </div>
-          </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 sm:p-3 mb-3">
-            <div className="flex items-center justify-center mb-1">
-              <Film className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-yellow-400" />
-              <span className="font-semibold text-xs sm:text-sm text-white">Filme Recomendado</span>
+            {/* Main Movie Recommendation */}
+            <div className="border-t border-white/20 pt-4">
+              <div className="flex items-center justify-center mb-2">
+                <Film className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+                <span className="font-semibold text-sm sm:text-base text-white">Filme Perfeito Para Você</span>
+              </div>
+              <div className="text-lg sm:text-xl font-bold text-yellow-300 mb-1">{result.movie}</div>
+              <div className="text-xs sm:text-sm text-gray-300 bg-white/10 rounded-full px-3 py-1 inline-block">
+                {result.genre}
+              </div>
             </div>
-            <div className="text-sm sm:text-lg font-bold text-yellow-300">{result.movie}</div>
+
+            {/* Additional Recommendations */}
+            <div className="mt-4 pt-4 border-t border-white/20">
+              <div className="text-xs sm:text-sm text-gray-300 mb-2">Outras sugestões especiais:</div>
+              <div className="flex flex-wrap gap-1.5 justify-center">
+                {result.movies.map((movie, index) => (
+                  <span key={index} className="text-xs bg-white/20 text-gray-200 rounded-full px-2 py-1">
+                    {movie}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
           
-          <div className="flex justify-center space-x-2 pt-2">
+          {/* Action Buttons */}
+          <div className="flex justify-center space-x-3 pt-2">
             <button
               onClick={restart}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
             >
-              🔄 Refazer
+              <span>🔄</span>
+              <span>Refazer</span>
             </button>
             <button
               onClick={onQuizClose}
-              className="bg-gray-600 hover:bg-gray-700 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300"
+              className="bg-gray-700/80 hover:bg-gray-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 backdrop-blur-sm border border-gray-600 flex items-center space-x-2"
             >
-              ✖️ Voltar
+              <span>✖️</span>
+              <span>Voltar</span>
             </button>
           </div>
         </div>
@@ -337,96 +384,121 @@ const InteractiveCinemaQuiz = ({ onQuizClose }) => {
   }
 
   return (
-    <div className={`h-full w-full bg-gradient-to-br ${currentQuiz.cor} transition-all duration-500 ${isTransitioning ? 'scale-95 opacity-50' : 'scale-100 opacity-100'} relative overflow-hidden flex flex-col`}>
+    <div className={`h-full w-full bg-gradient-to-br ${currentQuiz.cor} transition-all duration-700 ${isTransitioning ? 'scale-95 opacity-70' : 'scale-100 opacity-100'} relative overflow-hidden flex flex-col`}>
       
-      {/* Particles Animation */}
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/6 w-24 h-24 bg-white/5 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/6 w-20 h-20 bg-white/5 rounded-full blur-xl animate-pulse delay-700"></div>
+        <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-white/5 rounded-full blur-xl animate-pulse delay-1000"></div>
+      </div>
+
+      {/* Celebration Particles */}
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute animate-bounce text-yellow-300 z-10"
+          className="absolute text-lg sm:text-xl z-20 animate-bounce"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
             animationDelay: `${particle.delay}s`,
-            animationDuration: '1.5s'
+            animationDuration: '2s'
           }}
         >
-          ⭐
+          {particle.type}
         </div>
       ))}
 
       {/* Header */}
-      <div className="flex justify-between items-center p-2 sm:p-4 text-white">
-        <div className="flex items-center">
-          <span className="text-lg sm:text-2xl mr-2">{currentQuiz.emoji}</span>
+      <div className="relative z-10 flex justify-between items-center p-3 sm:p-5 text-white">
+        <div className="flex items-center space-x-3">
+          <div className="text-2xl sm:text-3xl animate-pulse">{currentQuiz.emoji}</div>
           <div>
-            <h1 className="text-sm sm:text-lg font-bold">{currentQuiz.dia}</h1>
-            <p className="text-xs sm:text-sm opacity-80">{currentQuiz.tema}</p>
+            <h1 className="text-base sm:text-xl font-bold drop-shadow-lg">{currentQuiz.dia}</h1>
+            <p className="text-xs sm:text-sm opacity-90 font-medium">{currentQuiz.tema}</p>
           </div>
         </div>
         <button
           onClick={onQuizClose}
-          className="text-white/60 hover:text-white transition-colors text-lg sm:text-xl"
+          className="text-white/70 hover:text-white transition-all duration-300 text-xl sm:text-2xl hover:scale-110 hover:rotate-90 p-2 rounded-full hover:bg-white/10"
         >
           ✕
         </button>
       </div>
 
-      {/* Stats */}
-      <div className="flex justify-between text-xs sm:text-sm mx-2 sm:mx-4 mb-2 sm:mb-3 bg-white/20 rounded-lg p-2 text-white">
-        <div className="flex items-center">
-          <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-          <span>{score}pts</span>
+      {/* Enhanced Stats Bar */}
+      <div className="relative z-10 flex justify-between items-center text-xs sm:text-sm mx-3 sm:mx-5 mb-3 sm:mb-4 bg-white/15 backdrop-blur-md rounded-2xl p-3 sm:p-4 text-white border border-white/20 shadow-lg">
+        <div className="flex items-center space-x-2">
+          <Award className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+          <span className="font-semibold">{score}</span>
+          <span className="opacity-75">pts</span>
         </div>
-        <div className="flex items-center">
-          <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-          <span>{streak}x</span>
+        <div className="flex items-center space-x-2">
+          <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-pink-400" />
+          <span className="font-semibold">{streak}</span>
+          <span className="opacity-75">seq</span>
         </div>
-        <div className="flex items-center">
-          <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-          <span>{currentQuestion + 1}/{currentQuiz.perguntas.length}</span>
-        </div>
-      </div>
-
-      {/* Progress Bar */}
-      <div className="mx-2 sm:mx-4 mb-2 sm:mb-3">
-        <div className="w-full bg-white/20 rounded-full h-1.5 sm:h-2 mb-1">
-          <div 
-            className="bg-gradient-to-r from-yellow-400 to-yellow-600 h-1.5 sm:h-2 rounded-full transition-all duration-700 ease-out"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-        <div className="text-center text-xs opacity-75 text-white">
-          {Math.round(progress)}% completo
+        <div className="flex items-center space-x-2">
+          <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+          <span className="font-semibold">{currentQuestion + 1}</span>
+          <span className="opacity-75">/{currentQuiz.perguntas.length}</span>
         </div>
       </div>
 
-      {/* Question */}
-      <div className="text-center mb-2 sm:mb-3 px-2 sm:px-4">
-        <h2 className="text-sm sm:text-base font-semibold leading-relaxed text-white">
-          {currentQ.texto}
-        </h2>
+      {/* Enhanced Progress Bar */}
+      <div className="relative z-10 mx-3 sm:mx-5 mb-4 sm:mb-6">
+        <div className="relative">
+          <div className="w-full bg-white/20 rounded-full h-2 sm:h-3 backdrop-blur-sm border border-white/30">
+            <div 
+              className="bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out shadow-lg relative overflow-hidden"
+              style={{ width: `${progress}%` }}
+            >
+              <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
+            </div>
+          </div>
+          <div className="text-center text-xs sm:text-sm mt-2 font-medium text-white/90">
+            {Math.round(progress)}% completo • {totalQuestions - answeredQuestions} restantes
+          </div>
+        </div>
+      </div>
+
+      {/* Question Section */}
+      <div className="relative z-10 text-center mb-4 sm:mb-6 px-3 sm:px-2">
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 shadow-xl">
+          <h2 className="text-sm sm:text-lg font-semibold leading-relaxed text-white drop-shadow-lg">
+            {currentQ.texto}
+          </h2>
+        </div>
       </div>
 
       {/* Answer Options */}
-      <div className="flex-1 overflow-y-auto px-2 sm:px-4 pb-2 sm:pb-4">
-        <div className="space-y-2">
+      <div className="relative z-10 flex-1 overflow-y-auto px-3 sm:px-5 pb-3 sm:pb-5">
+        <div className="space-y-3 sm:space-y-4">
           {currentQ.opcoes.map((opcao, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(index, opcao.pontos)}
               disabled={selectedAnswer !== null || isTransitioning}
-              className={`w-full group bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 sm:p-3 text-left transition-all duration-300 transform hover:scale-102 hover:bg-white/20 ${
-                selectedAnswer === index ? 'bg-green-500/50 scale-102' : ''
-              } ${selectedAnswer !== null && selectedAnswer !== index ? 'opacity-50' : ''} ${selectedAnswer !== null || isTransitioning ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+              className={`w-full group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-3 sm:p-4 text-left transition-all duration-500 transform hover:scale-105 hover:bg-white/20 shadow-lg hover:shadow-2xl ${
+                selectedAnswer === index ? 'bg-green-500/40 scale-105 shadow-2xl border-green-400/50' : ''
+              } ${selectedAnswer !== null && selectedAnswer !== index ? 'opacity-40 scale-95' : ''} ${selectedAnswer !== null || isTransitioning ? 'cursor-not-allowed' : 'cursor-pointer hover:border-white/40'}`}
             >
-              <div className="flex items-center">
-                <div className="mr-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-white/20 to-white/40 flex items-center justify-center text-xs sm:text-sm font-bold">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-white/20 to-white/40 flex items-center justify-center text-lg sm:text-xl border border-white/30 group-hover:scale-110 transition-transform duration-300">
                   {opcao.emoji}
                 </div>
                 <div className="flex-1">
-                  <span className="text-xs sm:text-sm text-white">{opcao.texto}</span>
-                  <div className="text-xs opacity-60 mt-0.5 text-white">+{opcao.pontos} pontos</div>
+                  <span className="text-sm sm:text-base text-white font-medium leading-relaxed block">
+                    {opcao.texto}
+                  </span>
+                  <div className="flex items-center mt-1.5 space-x-2">
+                    <div className="text-xs bg-white/20 text-white/90 rounded-full px-2 py-0.5 font-medium">
+                      +{opcao.pontos} pts
+                    </div>
+                    {opcao.pontos >= 4 && (
+                      <Star className="w-3 h-3 text-yellow-400 animate-pulse" />
+                    )}
+                  </div>
                 </div>
               </div>
             </button>
