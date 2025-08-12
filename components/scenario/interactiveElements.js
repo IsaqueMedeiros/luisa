@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const InteractiveElements = ({ 
   timeOfDay, 
@@ -12,6 +12,12 @@ const InteractiveElements = ({
   showingMovie,
   movies
 }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <>
       {/* Controls - Mobile responsive */}
@@ -180,59 +186,61 @@ const InteractiveElements = ({
       </div>
 
       {/* Mobile-optimized touch targets */}
-      <style jsx>{`
-        @keyframes gentleFloat {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(${window.innerWidth < 640 ? '-4px' : '-8px'}); }
-        }
-        
-        .animate-gentleFloat {
-          animation: gentleFloat ${window.innerWidth < 640 ? '3s' : '4s'} ease-in-out infinite;
-        }
-        
-        /* Touch-friendly interactions */
-        @media (max-width: 640px) {
-          button {
-            min-height: 44px; /* Apple's recommended touch target size */
-            min-width: 44px;
+      {isClient && (
+        <style jsx>{`
+          @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(${window.innerWidth < 640 ? '-4px' : '-8px'}); }
           }
           
-          /* Reduce motion intensity on mobile */
-          .animate-spin {
-            animation-duration: 8s !important;
+          .animate-gentleFloat {
+            animation: gentleFloat ${window.innerWidth < 640 ? '3s' : '4s'} ease-in-out infinite;
           }
           
-          .animate-bounce {
-            animation-duration: 3s;
+          /* Touch-friendly interactions */
+          @media (max-width: 640px) {
+            button {
+              min-height: 44px; /* Apple's recommended touch target size */
+              min-width: 44px;
+            }
+            
+            /* Reduce motion intensity on mobile */
+            .animate-spin {
+              animation-duration: 8s !important;
+            }
+            
+            .animate-bounce {
+              animation-duration: 3s;
+            }
+            
+            .animate-pulse {
+              animation-duration: 3s;
+            }
           }
           
-          .animate-pulse {
-            animation-duration: 3s;
+          /* Improve touch responsiveness */
+          .touch-manipulation {
+            touch-action: manipulation;
           }
-        }
-        
-        /* Improve touch responsiveness */
-        .touch-manipulation {
-          touch-action: manipulation;
-        }
-        
-        /* Reduce motion for performance and accessibility */
-        @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
-          .animate-bounce,
-          .animate-pulse,
-          .animate-gentleFloat,
-          .animate-spin {
-            animation: none;
+          
+          /* Reduce motion for performance and accessibility */
+          @media (prefers-reduced-motion: reduce) {
+            .animate-bounce,
+            .animate-pulse,
+            .animate-gentleFloat,
+            .animate-spin {
+              animation: none;
+            }
           }
-        }
-        
-        /* Optimize positioning for mobile landscape */
-        @media (max-width: 640px) and (orientation: landscape) {
-          .absolute[style*="top:"] {
-            transform: scale(0.8);
+          
+          /* Optimize positioning for mobile landscape */
+          @media (max-width: 640px) and (orientation: landscape) {
+            .absolute[style*="top:"] {
+              transform: scale(0.8);
+            }
           }
-        }
-      `}</style>
+        `}</style>
+      )}
     </>
   );
 };

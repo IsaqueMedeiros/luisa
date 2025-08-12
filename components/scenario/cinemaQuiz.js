@@ -463,13 +463,13 @@ const InteractiveCinemaQuiz = ({ onQuizClose }) => {
       </div>
 
       {/* Question Section */}
-      <div className="relative z-10 text-center mb-4 sm:mb-6 px-3 sm:px-2">
+      {/* <div className="relative z-10 text-center mb-4 sm:mb-6 px-3 sm:px-2">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 shadow-xl">
           <h2 className="text-sm sm:text-lg font-semibold leading-relaxed text-white drop-shadow-lg">
             {currentQ.texto}
           </h2>
         </div>
-      </div>
+      </div> */}
 
       {/* Answer Options */}
       <div className="relative z-10 flex-1 overflow-y-auto px-3 sm:px-5 pb-3 sm:pb-5">
