@@ -8,7 +8,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Anima - Investidor",
+  title: "Filmes da Lulu",
   description: "Em desenvolvimento!",
 };
 
